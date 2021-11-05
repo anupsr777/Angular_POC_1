@@ -20,6 +20,9 @@ export class UsersComponent implements OnInit {
       {'name':'Manager','age':35},
       {'name':'Developer','age':28}
     ];
+    let [user] = this.users;
+    this.name = user.name;
+    this.age = user.age;
   }
 
   userData(user:any):void{
