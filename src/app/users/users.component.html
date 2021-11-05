@@ -1,0 +1,30 @@
+<div class="table-div">
+    <h3>User Details</h3>
+    <table  class="table table-bordered">
+        <thead id="hd-colr" class="thead-light">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td><a (click)="userData(user)">{{user.name}}</a></td>
+                <td>{{user.age}}</td>
+            </tr>
+        </tbody>
+        </table>
+</div>
+<h3>Toggle Content using ngIf</h3>
+<button class="btn btn-primary" (click)="toggle(isUser)">click to display Age or Name</button>
+<div *ngIf="isUser; then content else nocontent"></div>
+<ng-template #content>
+    <div>
+        <p>Name: {{name}}</p>
+    </div>
+</ng-template>
+<ng-template #nocontent>
+    <div>
+        <p>Age: {{age}}</p>
+    </div>
+</ng-template>
